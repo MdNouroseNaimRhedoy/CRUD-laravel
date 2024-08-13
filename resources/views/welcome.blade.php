@@ -22,6 +22,9 @@
                 <h2 class="text-red-500 text-xl">Hello Nourose</h2>
                 <a href="/create" class="bg-green-600 text-white rounded py-2px px-4px">Add New Post</a>
             </div>
+        @if(session('success'))
+            <h2 class="text-green-600">{{session('success')}}</h2>
+        @endif
     </div>
 
 </body>
