@@ -34,8 +34,9 @@ class PostController extends Controller
         $post->image = $imageName;
 
         $post->save();  #save to database
+        flash()->success('Your Post has been created successfully!');
 
-        return redirect()->route('home')->with('success', 'Your Post has been created !');
+        return redirect()->route('home');
     }
 
     public function editData($id){
@@ -63,15 +64,17 @@ class PostController extends Controller
         }
 
         $post->save();  #save to database
+        flash()->success('Your Post has been updated successfully!');
 
-        return redirect()->route('home')->with('success', 'Your Post has been updated !');
+        return redirect()->route('home');
     }
 
     public function deleteData($id)
     {
         $post = Post::findorFail($id);
         $post->delete();
-        return redirect()->route('home')->with('success', 'Your Post has been deleted !');
+        flash()->success('Your Post has been deleted successfully!');
+        return redirect()->route('home');
     }
 
 }
