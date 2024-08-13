@@ -20,7 +20,7 @@
 <div class="container">
     <div class="flex justify-between my-5 ">
         <h2 class="text-red-500 text-xl">Edit - {{$ourPost->name}}</h2>
-        <a href="/" class="bg-green-600 text-white rounded py-2px px-4px">back Home</a>
+        <a href="/" class="bg-green-400 text-white rounded py-2 px-4">back Home</a>
     </div>
 
     <div>
@@ -43,7 +43,7 @@
                 <p class="text-red-600">{{$message}}</p>
                 @enderror
                 <div>
-                    <input type="submit" class="bg-green-500 text-white py-2 px-4 rounded inline-block">
+                    <input type="submit" class="bg-green-400 text-white py-2 px-4 rounded inline-block">
                 </div>
             </div>
         </form>

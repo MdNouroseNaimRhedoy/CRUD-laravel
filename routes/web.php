@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
-    return view('welcome',['posts' => Post::all()]);
+    return view('welcome',['posts' => Post::paginate(15)]);
 })->name('home');
 
 Route::get('/create', [PostController:: class,'create']);

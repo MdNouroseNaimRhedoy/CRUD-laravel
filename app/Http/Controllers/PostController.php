@@ -74,7 +74,4 @@ class PostController extends Controller
         return redirect()->route('home')->with('success', 'Your Post has been deleted !');
     }
 
-
-
-
 }

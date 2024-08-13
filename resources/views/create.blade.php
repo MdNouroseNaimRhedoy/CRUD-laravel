@@ -20,7 +20,7 @@
 <div class="container">
     <div class="flex justify-between my-5 ">
         <h2 class="text-red-500 text-xl">Create</h2>
-        <a href="/" class="bg-green-600 text-white rounded py-2px px-4px">back Home</a>
+        <a href="/" class="bg-green-400 text-white rounded py-2 px-4">back Home</a>
     </div>
 
     <div>
