@@ -22,7 +22,7 @@ class PostController extends Controller
         $imageName = null;
         if (isset($request->image)){
             //Upload Image
-            $imageName = time().'.'.$request->image;
+            $imageName = time().'.'.$request->image->extension();
             //when upload an image, it goes to public folder named images
             $request->image->move(public_path('images'),$imageName);
         }
@@ -36,5 +36,9 @@ class PostController extends Controller
         $post->save();  #save to database
 
         return redirect()->route('home')->with('success', 'Your Post has been created !');
+    }
+
+    public function editData(){
+        return view('edit') ;
     }
 }
