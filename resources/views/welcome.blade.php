@@ -51,7 +51,7 @@
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{{$post->description}}</td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800"><img src="images/{{$post->image}}" width="80px"></td>
                                         <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
-                                            <a href="{{route('edit')}}" class="btn">edit</a>
+                                            <a href="{{route('edit',$post->id)}}" class="btn">edit</a>
                                         </td>
                                     </tr>
 
