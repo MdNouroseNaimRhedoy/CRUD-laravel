@@ -17,13 +17,21 @@ class PostController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'image'=>'mimes:jpeg, jpg, png',
-            'image'=>'nullable',
+            'image'=>'nullable|mimes:jpeg, jpg, png',
         ]);
+        $imageName = null;
+        if (isset($request->image)){
+            //Upload Image
+            $imageName = time().'.'.$request->image;
+            //when upload an image, it goes to public folder named images
+            $request->image->move(public_path('images'),$imageName);
+        }
+
+        //add new post
         $post = new Post; #get post model
         $post->name = $request->name;
         $post->description = $request->description;
-        $post->image = $request->image;
+        $post->image = $imageName;
 
         $post->save();  #save to database
 

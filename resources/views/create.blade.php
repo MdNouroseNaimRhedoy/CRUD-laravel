@@ -24,21 +24,21 @@
     </div>
 
     <div>
-        <form method="POST" action="{{('store')}}">
+        <form method="POST" action="{{('store')}}" enctype="multipart/form-data">
             @csrf
             <div class="flex flex-col gap-5">
                 <label>Name</label>
-                <input type="text" name="name">
+                <input type="text" name="name" value="{{old("name")}}">
                 @error('name')
                     <p class="text-red-600">{{$message}}</p>
                 @enderror
                 <label>Description</label>
-                <input type="text" name="description">
+                <input type="text" name="description" value="{{old("description")}}">
                 @error('description')
                 <p class="text-red-600">{{$message}}</p>
                 @enderror
                 <label>Select image</label>
-                <input type="file" name="image">
+                <input type="file" name="image" value="{{old("image")}}">
                 @error('image')
                 <p class="text-red-600">{{$message}}</p>
                 @enderror
