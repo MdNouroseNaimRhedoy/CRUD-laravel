@@ -50,8 +50,6 @@ class PostController extends Controller
             'image'=>'nullable|mimes:jpeg, jpg, png',
         ]);
 
-
-
         //Update post
         $post = Post::findorFail($id);
         $post->name = $request->name;
@@ -68,6 +66,14 @@ class PostController extends Controller
 
         return redirect()->route('home')->with('success', 'Your Post has been updated !');
     }
+
+    public function deleteData($id)
+    {
+        $post = Post::findorFail($id);
+        $post->delete();
+        return redirect()->route('home')->with('success', 'Your Post has been deleted !');
+    }
+
 
 
 
